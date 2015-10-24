@@ -8,7 +8,6 @@ table
     border-collapse: collapse;
     text-align: center;
     overflow: hidden;
-    z-index: 1;
 }
 
 th,
@@ -20,28 +19,36 @@ td
 
 th
 {
-    background-color: darkseagreen;
-}
-
-tr:nth-child(2n+1)
-{
-    background-color: whitesmoke;
+    background-color: #8FBC8F;
 }
 
 tr:hover
 {
-    background-color: lightyellow;
+    background-color: #FFFFE0;
+}
+
+tr:nth-child(odd) td::after,
+td:hover::after
+{
+    content: "";    
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+tr:nth-child(odd) td::after
+{
+    background-color: #F5F5F5;
+    top: 0;
+    height: 100%;
+    z-index: -2;
 }
 
 td:hover::after
 {
-    background-color: lightyellow;
-    content: "";    
-    left: 0;
-    position: absolute;
+    background-color: #FFFFE0;
     top: -5000px;
     height: 10000px;
-    width: 100%;
     z-index: -1;
 }
 
@@ -49,11 +56,8 @@ td:hover::after
 {
     margin-bottom: 10px;
 }
-/*.sendInfo input:required:valid~button[type="submit"] {
-    display: block;
-}*/
 
-input[type="tel"]:valid + input[type="email"]:valid + button[type="submit"]
+form:valid button[type="submit"]
 {
     display: block;
 }
