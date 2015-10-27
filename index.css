@@ -36,7 +36,7 @@ td:hover::after
     width: 100%;
 }
 
-tr:nth-child(odd) td::after
+td::after
 {
     background-color: #F5F5F5;
     top: 0;
